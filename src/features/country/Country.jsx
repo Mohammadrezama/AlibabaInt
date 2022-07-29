@@ -5,13 +5,14 @@ import {
   arrayToString,
   findCurrencies,
   findLanguages,
+  findNativeNames,
 } from "utils/utils";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeftLong } from "@fortawesome/free-solid-svg-icons";
 const Country = ({ country, borders }) => {
   const firstSeries = [
-    { label: "Native Name", text: "unknown" },
+    { label: "Native Name", text: findNativeNames(country?.name?.nativeName) },
     { label: "Population", text: formatPopulation(country?.population) },
     { label: "Region", text: country?.region },
     { label: "Sub Region", text: country?.subregion },
@@ -44,13 +45,12 @@ const Country = ({ country, borders }) => {
           <img
             src={country.flags.png}
             alt={country.name.official}
-            className="h-[200px] w-full"
-            style={{ aspectRatio: 4 / 3, objectFit: "contain" }}
+            className="w-full md:w-[70%]"
           />{" "}
         </div>
 
         <div className=" grid grid-cols-12 col-span-12 md:col-span-6 ">
-          <div className="col-span-12 font-">
+          <div className="col-span-12 mt-[20px] md:mt-0">
             {" "}
             <Title>{country.name.official}</Title>
           </div>

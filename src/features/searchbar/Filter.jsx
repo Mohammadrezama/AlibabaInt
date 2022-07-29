@@ -1,6 +1,6 @@
 import React from "react";
 import { Select } from "components";
-export const Filter = ({ onFilterChange }) => {
+export const Filter = ({ onFilterChange, sortHandler }) => {
   const options = [
     { value: "Africa", label: "Africa" },
     { value: "Asia", label: "Asia" },
@@ -16,8 +16,12 @@ export const Filter = ({ onFilterChange }) => {
     },
     { value: "countryName", label: "Country Name" },
   ];
+
+  const Test = () => {
+    return <div>Test</div>;
+  };
   return (
-    <div className="w-full  md:w-[300px] flex gap-x-2">
+    <div className="w-full   flex gap-x-2">
       <Select
         options={options}
         placeholder="Filter by region"
@@ -28,6 +32,7 @@ export const Filter = ({ onFilterChange }) => {
         options={sortOptions}
         placeholder="Sort by "
         className={"w-full"}
+        onChange={sortHandler}
       /> */}
     </div>
   );

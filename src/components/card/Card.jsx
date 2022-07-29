@@ -21,13 +21,11 @@ export const Card = ({ item, onClick }) => {
       className="flex flex-col bg-elementColor cursor-pointer"
       onClick={() => onClick(item)}
     >
-      <div className="md:relative md:pt-[75%]">
-        <img
-          src={item.flags.png}
-          alt={item.name.official}
-          className="  md:absolute md:top-0 object-cover h-[200px]"
-        />
-      </div>
+      <img
+        src={item.flags.png}
+        alt={item.name.official}
+        className="h-[200px]"
+      />
       <div className="p-4">
         <Title>{item.name.common}</Title>
         {details.map((item, index) => {

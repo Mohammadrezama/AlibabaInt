@@ -9,6 +9,7 @@ export const Select = ({
   placeholder,
   isClearable = true,
   onChange,
+  components,
 }) => {
   return (
     <ReactSelect
@@ -20,6 +21,7 @@ export const Select = ({
       isClearable={isClearable}
       onChange={(item) => onChange(item?.value)}
       classNamePrefix={"react-select"}
+      components={components}
     />
   );
 };

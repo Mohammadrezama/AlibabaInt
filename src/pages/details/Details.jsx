@@ -37,7 +37,7 @@ const Details = () => {
 
   return (
     <div
-      className={`h-screen text-[16px] ${
+      className={`min-h-screen text-[16px] ${
         darkMode ? "bg-bgColor" : "bg-elementColor"
       }`}
     >

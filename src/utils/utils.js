@@ -37,6 +37,12 @@ export const findLanguages = (obj) => {
   return languages;
 };
 
+export const findNativeNames = (obj) => {
+  let names = Object.keys(obj).map((key, index) => {
+    return index === 0 ? obj[key]?.common : `, ${obj[key]?.common}`;
+  });
+  return names;
+};
 // this function check the search key contain in a word or not:
 // it returns true for grmn when we want to check germany
 export const findIncludedLetters = (name, searchKey) => {
