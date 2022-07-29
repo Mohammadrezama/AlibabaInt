@@ -25,7 +25,9 @@ const Header = () => {
         </Link>
         <div className="flex items-center">
           <FontAwesomeIcon icon={faMoon} className="mr-2 mt-[2px]" />
-          <button onClick={changeMode}>DarkMode</button>
+          <button onClick={changeMode} className="font-semibold">
+            DarkMode
+          </button>
         </div>
       </div>
     </div>

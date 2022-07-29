@@ -33,7 +33,7 @@ const Details = () => {
   }, [countryToShow]);
 
   return (
-    <div className={`h-screen`}>
+    <div className={`h-screen text-[16px]`}>
       <div className="container mx-auto p-[20px] md:p-[0] bg-elementColor">
         {countryToShow && <Country country={countryToShow} borders={borders} />}
       </div>

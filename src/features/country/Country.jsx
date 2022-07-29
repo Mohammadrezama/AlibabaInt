@@ -49,7 +49,7 @@ const Country = ({ country, borders }) => {
         </div>
 
         <div className=" grid grid-cols-12 col-span-12 md:col-span-6 ">
-          <div className="col-span-12">
+          <div className="col-span-12 font-">
             {" "}
             <Title>{country.name.official}</Title>
           </div>
@@ -76,7 +76,7 @@ const Country = ({ country, borders }) => {
             })}
           </div>
           <div className="grid-cols-12 col-span-12">
-            <div className="mr-2 col-span-12 md:col-span-6">
+            <div className="mr-2 col-span-12 md:col-span-6 semibold">
               Border Countries:
             </div>
             <div className="col-span-12 md:col-span-6">

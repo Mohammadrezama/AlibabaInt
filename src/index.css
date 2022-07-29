@@ -1,11 +1,29 @@
-
-
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* 1 */
 
+@font-face {
+  font-family: "NunitoSans";
+  font-style: normal;
+  font-weight: 300;
+  src: url("./assets/fonts/Nunito_Sans/NunitoSans-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "NunitoSans";
+  font-style: normal;
+  font-weight: 600;
+  src: url("./assets/fonts/Nunito_Sans/NunitoSans-SemiBold.ttf")
+    format("truetype");
+}
+@font-face {
+  font-family: "NunitoSans";
+  font-style: normal;
+  font-weight: 800;
+  src: url("./assets/fonts/Nunito_Sans/NunitoSans-ExtraBold.ttf")
+    format("truetype");
+}
+
+/* 1 */
 /*- Dark Blue (Dark Mode Elements): hsl(209, 23%, 22%)
 - Very Dark Blue (Dark Mode Background): hsl(207, 26%, 17%)
 - Very Dark Blue (Light Mode Text): hsl(200, 15%, 8%)
@@ -13,20 +31,18 @@
 - Very Light Gray (Light Mode Background): hsl(0, 0%, 98%)
 - White (Dark Mode Text & Light Mode Elements): hsl(0, 0%, 100%) */
 :root {
-  --elements:hsl(0, 0%, 100%);
-  --background:#eee;
-  --text:hsl(200, 15%, 8%);
-  --input:hsl(0, 0%, 52%);
+  --elements: hsl(0, 0%, 100%);
+  --background: #eee;
+  --text: hsl(200, 15%, 8%);
+  --input: hsl(0, 0%, 52%);
 }
 
 /* 2 */
 [data-theme="dark"] {
-  --elements:hsl(209, 23%, 22%);
-  --background:hsl(207, 26%, 17%);
+  --elements: hsl(209, 23%, 22%);
+  --background: hsl(207, 26%, 17%);
   --text: hsl(0, 0%, 100%);
-  --input:hsl(0, 0%, 52%);
-
-
+  --input: hsl(0, 0%, 52%);
 }
 
 /* 3 */
@@ -34,5 +50,3 @@ body {
   background-color: var(--background);
   color: var(--text);
 }
-
-

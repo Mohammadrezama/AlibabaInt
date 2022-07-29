@@ -5,7 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 export const Layout = ({ children }) => {
   return (
-    <div className="home  text-[14px] h-screen ">
+    <div className="home  text-[14px] h-screen font-nunitoSans ">
       <ToastContainer
         position="top-right"
         autoClose={5000}
