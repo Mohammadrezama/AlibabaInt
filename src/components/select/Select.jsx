@@ -8,6 +8,7 @@ export const Select = ({
   label,
   placeholder,
   isClearable = true,
+  onChange,
 }) => {
   return (
     <ReactSelect
@@ -17,6 +18,7 @@ export const Select = ({
       label={label}
       placeholder={placeholder}
       isClearable={isClearable}
+      onChange={(item) => onChange(item?.value)}
     />
   );
 };

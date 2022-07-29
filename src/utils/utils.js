@@ -1,5 +1,3 @@
-import Countries from "features/countries/Countries";
-
 export const formatPopulation = (text) => {
   const numberFormatter = Intl.NumberFormat("en-US");
   const formatted = numberFormatter.format(+text);
@@ -37,4 +35,30 @@ export const findLanguages = (obj) => {
   });
 
   return languages;
+};
+
+// this function check the search key contain in a word or not:
+// it returns true for grmn when we want to check germany
+export const findIncludedLetters = (name, searchKey) => {
+  let nameToLower = name.toLowerCase();
+  let searchKeyTolower = searchKey.toLowerCase();
+  let nameArr = nameToLower.split(""); //  ["a", "h", "m", "a", "d"];
+
+  let searchArr = searchKeyTolower.split(""); //  ["m", "a", "d"];
+
+  let isIncluded = searchArr.every((searchItem) => {
+    if (nameArr.includes(searchItem)) {
+      return true;
+    } else {
+      return false;
+    }
+  });
+
+  return isIncluded;
+};
+
+export const findWordsCaseInsensitive = (name, searchKey) => {
+  let nameToLower = name.toLowerCase().trim();
+  let searchKeyTolower = searchKey.toLowerCase().trim();
+  return nameToLower.includes(searchKeyTolower);
 };

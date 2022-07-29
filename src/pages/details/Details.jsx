@@ -34,7 +34,13 @@ const Details = () => {
   return (
     <div className={`h-screen`}>
       <div className="container mx-auto ">
-        {countryToShow && <Country country={countryToShow} borders={borders} />}
+        {countryToShow && countryToShow?.length > 0 ? (
+          <Country country={countryToShow} borders={borders} />
+        ) : (
+          <div className="flex justify-center items-center">
+            <h1 className="text-gray-300">No records to show</h1>
+          </div>
+        )}
       </div>
     </div>
   );

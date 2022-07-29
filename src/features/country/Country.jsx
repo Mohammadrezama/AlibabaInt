@@ -65,8 +65,8 @@ const Country = ({ country, borders }) => {
           </div>
           <div className="col-span-12 flex">
             <div className="mr-2">Border Countries:</div>
-            {borders.map((item) => (
-              <Link to={`/details/${item}?fullText=true`}>
+            {borders.map((item, index) => (
+              <Link to={`/details/${item}?fullText=true`} key={index}>
                 <button className="border mr-2 p-2"> {item}</button>
               </Link>
             ))}
