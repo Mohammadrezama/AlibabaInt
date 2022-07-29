@@ -50,3 +50,16 @@ body {
   background-color: var(--background);
   color: var(--text);
 }
+.react-select-container,
+.react-select__value-container,
+.react-select__indicators,
+.react-select__menu,
+.react-select__menu-list {
+  background-color: var(--elements);
+  color: var(--text);
+}
+
+.react-select__control {
+  background-color: var(--elements) !important;
+  color: var(--text);
+}

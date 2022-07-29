@@ -19,6 +19,7 @@ export const Select = ({
       placeholder={placeholder}
       isClearable={isClearable}
       onChange={(item) => onChange(item?.value)}
+      classNamePrefix={"react-select"}
     />
   );
 };
