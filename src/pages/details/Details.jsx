@@ -3,12 +3,15 @@ import { useParams } from "react-router-dom";
 import { commonFetch } from "services/api";
 import { arrayToString } from "utils/utils";
 import { NotFound } from "components";
+import { useUI } from "hooks";
 import Country from "features/country/Country";
 const Details = () => {
   const [countryToShow, setCountryToShow] = useState(null);
   const [borders, setBorders] = useState([]);
   const params = useParams();
-  const mode = localStorage.getItem("theme");
+  const {
+    UIState: { darkMode },
+  } = useUI();
 
   useEffect(() => {
     commonFetch(`name/${params.name}?fullText=true`)
@@ -33,8 +36,12 @@ const Details = () => {
   }, [countryToShow]);
 
   return (
-    <div className={`h-screen text-[16px]`}>
-      <div className="container mx-auto p-[20px] md:p-[0] bg-elementColor">
+    <div
+      className={`h-screen text-[16px] ${
+        darkMode ? "bg-bgColor" : "bg-elementColor"
+      }`}
+    >
+      <div className="container mx-auto p-[20px]  md:pt-[40px]">
         {countryToShow && <Country country={countryToShow} borders={borders} />}
       </div>
     </div>

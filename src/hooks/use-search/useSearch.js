@@ -49,23 +49,24 @@ export const useSearch = () => {
   }, []);
 
   useEffect(() => {
-    if (firstRender.current) return;
-    if (!firstRender.current && !region && !debouncedSearchText) {
-      setCountriesToShow(countriesData);
-    }
-    let filteredData = countriesData;
-    if (region) {
-      filteredData = filterByRegion(countriesData);
-    }
-    if (debouncedSearchText) {
-      filteredData = filterByText(filteredData);
-    }
-    setCountriesToShow(filteredData);
-
     if (firstRender.current) {
       firstRender.current = false;
+      return;
     }
-  }, [region, debouncedSearchText]);
+    if (countriesData) {
+      if (!firstRender.current && !region && !debouncedSearchText) {
+        setCountriesToShow(countriesData);
+      }
+      let filteredData = countriesData;
+      if (region) {
+        filteredData = filterByRegion(countriesData);
+      }
+      if (debouncedSearchText) {
+        filteredData = filterByText(filteredData);
+      }
+      setCountriesToShow(filteredData);
+    }
+  }, [region, debouncedSearchText, countriesData]);
 
   console.log({ countriesToShow });
 

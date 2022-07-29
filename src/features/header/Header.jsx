@@ -3,20 +3,10 @@ import { Title } from "components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import { useUI } from "hooks";
 const Header = () => {
-  const changeMode = () => {
-    const mode = localStorage.getItem("theme");
-    if (mode === "light") {
-      localStorage.setItem("theme", "dark");
-      // 3
-      document.documentElement.setAttribute("data-theme", "dark");
-    } else {
-      localStorage.setItem("theme", "light");
+  const { UIState, toggleDarkMode } = useUI();
 
-      // 3
-      document.documentElement.setAttribute("data-theme", "light");
-    }
-  };
   return (
     <div className="  bg-elementColor  shadow">
       <div className="h-[70px] container mx-auto  flex items-center justify-between p-[20px] sm:p-0">
@@ -25,7 +15,7 @@ const Header = () => {
         </Link>
         <div className="flex items-center">
           <FontAwesomeIcon icon={faMoon} className="mr-2 mt-[2px]" />
-          <button onClick={changeMode} className="font-semibold">
+          <button onClick={toggleDarkMode} className="font-semibold">
             DarkMode
           </button>
         </div>

@@ -29,11 +29,12 @@ const Country = ({ country, borders }) => {
     { label: "Currencies", text: findCurrencies(country?.currencies) },
     { label: "Languages", text: findLanguages(country?.languages) },
   ];
+  console.count();
   return (
     <div className="">
       <Link
         to="/"
-        className="flex items-center justify-center  shadow w-[100px] h-[30px]"
+        className="flex items-center justify-center  shadow w-[100px] h-[30px] bg-elementColor mb-[40px]"
       >
         <FontAwesomeIcon icon={faArrowLeftLong} className="mr-2" size="lg" />
         <button>Back</button>
@@ -79,10 +80,14 @@ const Country = ({ country, borders }) => {
             <div className="mr-2 col-span-12 md:col-span-6 semibold">
               Border Countries:
             </div>
-            <div className="col-span-12 md:col-span-6">
+            <div className="col-span-12 md:col-span-6 flex flex-wrap gap-[10px]">
               {borders.map((item, index) => (
-                <Link to={`/details/${item}?fullText=true`} key={index}>
-                  <button className="border mr-2 p-2 shadow"> {item}</button>
+                <Link
+                  to={`/details/${item}?fullText=true`}
+                  className="min-w-[100px] h-[30px] bg-elementColor  border shadow flex justify-center items-center"
+                  key={index}
+                >
+                  {item}
                 </Link>
               ))}
             </div>
