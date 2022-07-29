@@ -17,7 +17,7 @@ export const Filter = ({ onFilterChange }) => {
     { value: "countryName", label: "Country Name" },
   ];
   return (
-    <div className="w-[400px] flex gap-x-2">
+    <div className="w-full  md:w-[300px] flex gap-x-2">
       <Select
         options={options}
         placeholder="Filter by region"

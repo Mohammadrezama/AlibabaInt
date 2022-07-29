@@ -24,7 +24,7 @@ export const Card = ({ item, onClick }) => {
       <img
         src={item.flags.png}
         alt={item.name.official}
-        className="h-[200px]"
+        className="h-[200px] "
       />
       <div className="p-4">
         <Title>{item.name.common}</Title>

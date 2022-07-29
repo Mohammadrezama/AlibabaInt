@@ -5,3 +5,4 @@ export * from "./input";
 export * from "./select";
 export * from "./card";
 export * from "./mapped-details";
+export * from "./not-found";

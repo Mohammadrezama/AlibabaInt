@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { commonFetch } from "services/api";
 import { arrayToString } from "utils/utils";
+import { NotFound } from "components";
 import Country from "features/country/Country";
 const Details = () => {
   const [countryToShow, setCountryToShow] = useState(null);
@@ -33,14 +34,8 @@ const Details = () => {
 
   return (
     <div className={`h-screen`}>
-      <div className="container mx-auto ">
-        {countryToShow && countryToShow?.length > 0 ? (
-          <Country country={countryToShow} borders={borders} />
-        ) : (
-          <div className="flex justify-center items-center">
-            <h1 className="text-gray-300">No records to show</h1>
-          </div>
-        )}
+      <div className="container mx-auto p-[20px] md:p-[0] bg-elementColor">
+        {countryToShow && <Country country={countryToShow} borders={borders} />}
       </div>
     </div>
   );

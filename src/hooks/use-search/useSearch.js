@@ -49,6 +49,7 @@ export const useSearch = () => {
   }, []);
 
   useEffect(() => {
+    if (firstRender.current) return;
     if (!firstRender.current && !region && !debouncedSearchText) {
       setCountriesToShow(countriesData);
     }
@@ -65,6 +66,8 @@ export const useSearch = () => {
       firstRender.current = false;
     }
   }, [region, debouncedSearchText]);
+
+  console.log({ countriesToShow });
 
   return {
     countriesToShow,

@@ -9,9 +9,13 @@ const Countries = ({ countriesToShow }) => {
     navigate(`details/${item.name.common}?fullText=true`);
   };
   return (
-    <div className="grid grid-cols-4 gap-[40px]">
+    <div className="grid grid-cols-12 gap-y-[20px] sm:gap-[40px]">
       {countriesToShow.map((item, index) => {
-        return <Card key={index} item={item} onClick={onClick} />;
+        return (
+          <div className=" sm:col-span-3 col-span-12 px-[20px] sm:px-[0]">
+            <Card key={index} item={item} onClick={onClick} />
+          </div>
+        );
       })}
     </div>
   );

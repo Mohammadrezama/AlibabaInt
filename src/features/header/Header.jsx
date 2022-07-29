@@ -1,5 +1,8 @@
 import React from "react";
 import { Title } from "components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMoon } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 const Header = () => {
   const changeMode = () => {
     const mode = localStorage.getItem("theme");
@@ -16,9 +19,14 @@ const Header = () => {
   };
   return (
     <div className="  bg-elementColor  shadow">
-      <div className="h-[70px] container mx-auto  flex items-center justify-between">
-        <Title>Where in the world?</Title>
-        <button onClick={changeMode}>DarkMode</button>
+      <div className="h-[70px] container mx-auto  flex items-center justify-between p-[20px] sm:p-0">
+        <Link to={"/"}>
+          <Title>Where in the world?</Title>
+        </Link>
+        <div className="flex items-center">
+          <FontAwesomeIcon icon={faMoon} className="mr-2 mt-[2px]" />
+          <button onClick={changeMode}>DarkMode</button>
+        </div>
       </div>
     </div>
   );
